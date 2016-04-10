@@ -4,7 +4,7 @@ maintainer_email 'you@example.com'
 license 'all_rights'
 description 'Installs/Configures motdserver'
 long_description 'Installs/Configures motdserver'
-version '2.0.0'
+version '3.0.0'
 
 depends 'chef-vault'
 depends 'example', '~> 3.0.0'
