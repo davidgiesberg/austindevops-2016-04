@@ -5,3 +5,6 @@ license 'all_rights'
 description 'Installs/Configures motdserver'
 long_description 'Installs/Configures motdserver'
 version '0.1.0'
+
+depends 'example', '= 2.0.0'
+depends 'nginx', '= 2.7.6'

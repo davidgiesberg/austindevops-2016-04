@@ -1,0 +1,5 @@
+source 'https://supermarket.chef.io'
+
+metadata
+
+cookbook 'example', git: 'https://github.com/davidgiesberg/austindevops-2016-04.git', ref: '4a395680df0930e29eaf94577abb69a81aebb7a8', rel: 'cookbooks/example'
