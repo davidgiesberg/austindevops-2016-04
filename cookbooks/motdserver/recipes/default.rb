@@ -5,7 +5,7 @@
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
 include_recipe 'example'
-
+include_recipe 'chef-vault'
 include_recipe 'nginx::default'
 
 package 'curl'
@@ -27,8 +27,19 @@ cookbook_file '/etc/nginx/sites-available/motd' do
   owner 'root'
   group 'root'
   mode '0644'
+  notifies :reload, 'service[nginx]'
 end
 
 nginx_site 'motd' do
   enable true
+end
+
+pass = chef_vault_item('users', 'david')['password']
+
+file '/etc/nginx/sites-available/motd.htpasswd' do
+  action :create
+  owner 'root'
+  group 'root'
+  mode '0644'
+  content "david:{PLAIN}#{pass}"
 end

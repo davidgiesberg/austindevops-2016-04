@@ -24,3 +24,4 @@ platforms:
 suites:
   - name: default
     run_list: motdserver::default
+    data_bag_path: test/integration/data_bags
