@@ -6,3 +6,10 @@ log "Welcome to Chef, #{node["example"]["name"]}!" do
 end
 
 # For more information, see the documentation: https://docs.getchef.com/essentials_cookbook_recipes.html
+
+cookbook_file '/etc/motd' do
+  source 'motd'
+  owner 'root'
+  group 'root'
+  mode '0644'
+end
